@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>E1D506E8-F660-43F2-A417-7DC4B5BA7D5D</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Fluid</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>7DF73E1E2B5BDE00B62ECA75C775BD93BE9E16D4</key>
+		<string>https://github.com/sparkasaurusRex/FluidSim.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Fluid.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>7DF73E1E2B5BDE00B62ECA75C775BD93BE9E16D4</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/sparkasaurusRex/FluidSim.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>7DF73E1E2B5BDE00B62ECA75C775BD93BE9E16D4</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>7DF73E1E2B5BDE00B62ECA75C775BD93BE9E16D4</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Fluid</string>
+		</dict>
+	</array>
+</dict>
+</plist>

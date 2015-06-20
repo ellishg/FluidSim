@@ -5,57 +5,55 @@ World::World()  {
     running = true;
     
     frames = 0;
+    
+    gridWidth = fluid.getGridWidth();
+    gridHeight = fluid.getGridHeight();
+    N = fluid.getN();
 }
 
 int main()  {
         
     World world;
     
-    //srand(time(NULL));
+    srand((unsigned int)time(NULL));
     
     
     if (!world.OnInit()) {
         std::cout << "Error OnInit!\n";
-        //return 0;
+        return 0;
     }
     
-    if (world.simMode != READ_FILE) {
+    while (world.isRunning()) {
         
-        while (world.isRunning()) {
-            
-            unsigned long prevTime = GET_TICKS;
+        unsigned long prevTime = GET_TICKS;
+        
+        if (world.simMode != READ_FILE) {
             
             world.OnLoop();
-            
-            do {
-                world.OnEvent();
-                
-                world.OnRender();
-                
-            } while (GET_TICKS - prevTime < 1000 / FRAMES_PER_SECOND);
-            
-            //std::cout << 1000 / (GET_TICKS - prevTime) << ", ";
+        
+            world.OnRender();
         }
-    }
-    else    {
-        while (world.isRunning()) {
-            
-            unsigned long prevTime = GET_TICKS;
-            
+        else    {
             world.renderData();
-            
-            do {
-                world.OnEvent();
-            } while (GET_TICKS - prevTime < 1000 / FRAMES_PER_SECOND);
-            
-            //std::cout << 1000.f / (GET_TICKS - prevTime) << ", ";
-
         }
+        
+        do {
+            world.OnEvent();
+            
+        } while (GET_TICKS - prevTime < 1000 / FRAMES_PER_SECOND);
+        
+        char titleStr[32];  //this should be long enough for my title
+        
+        sprintf(titleStr, "Fluid FPS: %d", (int)(1000.f / (GET_TICKS - prevTime)));
+        
+        world.setWindowTitle(titleStr);
+        
+        //std::cout << 1000 / (GET_TICKS - prevTime) << ", ";
     }
     
     if (!world.OnCleanup()) {
         std::cout << "Error OnCleanup!\n";
-        //return 0;
+        return 0;
     }
     
     return 0;

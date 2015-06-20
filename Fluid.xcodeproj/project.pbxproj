@@ -20,18 +20,6 @@
 		E7A3D6541971B211007B4DF2 /* Color.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7A3D6521971B211007B4DF2 /* Color.cpp */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		E7A3D62D1971A05A007B4DF2 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = data;
-			dstSubfolderSpec = 16;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 1;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
 		E7A3D62F1971A05A007B4DF2 /* Fluid */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Fluid; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7A3D63B1971A093007B4DF2 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
@@ -111,7 +99,6 @@
 			buildPhases = (
 				E7A3D62B1971A05A007B4DF2 /* Sources */,
 				E7A3D62C1971A05A007B4DF2 /* Frameworks */,
-				E7A3D62D1971A05A007B4DF2 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -128,7 +115,7 @@
 		E7A3D6271971A05A007B4DF2 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0510;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Ellis Sparky Hoag";
 			};
 			buildConfigurationList = E7A3D62A1971A05A007B4DF2 /* Build configuration list for PBXProject "Fluid" */;
@@ -185,6 +172,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;

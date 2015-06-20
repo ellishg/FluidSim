@@ -14,28 +14,31 @@
 #include "Vector.h"
 #include "Color.h"
 
-#define IX(i, j) ((i) + (N+2) * (j))
-#define EX(i, j) ((i) + (N) * (j))
+#define IX(i, j) ((i) + (gridWidth + 2) * (j))
+#define EX(i, j) ((i) + (gridWidth) * (j))
 #define SWAP(x0, x) {float * tmp = x0; x0 = x; x = tmp;}
+
+#define MAX_DENSITY 10
 
 class Fluid {
     
 private:
     
     int N;
+    int gridWidth, gridHeight;
     
     int size;
     
     float *u, *v, *u_prev, *v_prev;
     
-    float *dens, *dens_prev;
+    float *dens_r, *dens_g, *dens_b, *dens_prev_r, *dens_prev_g, *dens_prev_b;
         
     float visc, diff, dt;
     
     Color * colors;
     
     
-    void add_source(float * x, float * s, float dt);
+    void add_source(float * x, float * s, float dt, bool IsDensity);
     
     void diffuse(int b, float * x, float * x0, float diff, float dt);
     
@@ -62,11 +65,15 @@ public:
     
     void prepareRender();
     
-    Color * getColors(uint32_t * _length) {*_length = N; return colors;}
+    Color * getColors() {return colors;}
     
-    void addFluid(int x, int y, float s, float r);
-    
+    void addFluid(int x, int y, float strength, float radius, Color color);
+        
     void addVelocity(int x, int y, Vector dir, float r);
+    
+    int getGridWidth()  {return gridWidth;}
+    
+    int getGridHeight() {return gridHeight;}
     
     int getN()  {return N;}
 

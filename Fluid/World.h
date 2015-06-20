@@ -11,11 +11,14 @@
 
 #define USING_SDL
 
-#define FRAMES_PER_SECOND 60
+#define FRAMES_PER_SECOND 30
 
-#define SCREEN_SIZE 300
+#define SCREEN_SIZE 600
+#define SCREEN_SIZE_LENGTH SCREEN_SIZE
+#define SCREEN_SIZE_HEIGHT (SCREEN_SIZE * (float)gridHeight / gridWidth)
 
-#define WORLD_SIZE 5
+#define WORLD_SIZE_LENGTH 1
+#define WORLD_SIZE_HEIGHT ((float)gridHeight / gridWidth)
 
 #include <iostream>
 #include <stdio.h>
@@ -51,6 +54,8 @@ private:
     
     bool shiftKey;
     
+    bool oneKey, twoKey, threeKey;
+    
     Fluid fluid;
     
     FILE * myDataFile;
@@ -58,16 +63,20 @@ private:
     uint32_t frames;
     
     Color * colors;
-    
-    uint32_t cLength;
-    
+        
     GLdouble * vertices;
     
     GLdouble * vertColors;
     
+    //GLfloat * vertDataArray;
+    
     //GLuint * indices;
     
-    int getN()  {return (simMode == READ_FILE) ? cLength : fluid.getN();}
+    //GLuint vertexBuffer;
+    
+    //int getN()  {return (simMode == READ_FILE) ? cLength : fluid.getN();}
+    
+    uint32_t gridWidth, gridHeight, N;
     
     
 #ifdef USING_SDL
@@ -121,6 +130,8 @@ public:
     void SDLKeyUp(SDL_Keycode sym);
     
     void SDLMouseEvent(SDL_MouseButtonEvent mouseButton, int x, int y);
+    
+    void setWindowTitle(const char * title) {SDL_SetWindowTitle(SDLWindow, title);}
 #endif
     
     bool OnCleanup();
